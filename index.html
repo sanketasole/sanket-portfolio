@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!--CSS Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <title>Sanket Asole | Web Developer</title>
+
+  <!-- Favicons -->
+  <!-- <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png" /> -->
+  <!-- <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/icons/favicon-32x32.png"
+    /> -->
+
+  <!-- Animate CSS CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+
+<body>
+
+  <!-- <div id="particles-js"></div> -->
+  <!-- Navbar -->
+  <nav>
+    <h1><b>SANKET ASOLE </b></h1>
+    <ul class="navigation">
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#skills" class="nav-link">Skills</a></li>
+      <li><a href="#projects" class="nav-link">Projects</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <button class="burger-menu" id="burger-menu">
+      <ion-icon class="bars" name="menu-outline"></ion-icon>
+      <!-- <ion-icon class="times" name="close-outline"></ion-icon> -->
+    </button>
+  </nav>
+  <br>
+
+
+
+  <div class="project-container project-card">
+    <div class="container">
+      <div class="display-date">
+        <span id="day">day</span>,
+        <span id="daynum">00</span>
+        <span id="month">month</span>
+        <span id="year">0000</span>
+      </div>
+      <div class="display-time"></div>
+    </div>
+  </div>
+
+  <script>
+    const displayTime = document.querySelector(".display-time");
+    // Time
+    function showTime() {
+      let time = new Date();
+      displayTime.innerText = time.toLocaleTimeString("en-US", { hour12: false });
+      setTimeout(showTime, 1000);
+    }
+
+    showTime();
+
+    // Date
+    function updateDate() {
+      let today = new Date();
+
+      // return number
+      let dayName = today.getDay(),
+        dayNum = today.getDate(),
+        month = today.getMonth(),
+        year = today.getFullYear();
+
+      const months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
+      ];
+      const dayWeek = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ];
+      // value -> ID of the html element
+      const IDCollection = ["day", "daynum", "month", "year"];
+      // return value array with number as a index
+      const val = [dayWeek[dayName], dayNum, months[month], year];
+      for (let i = 0; i < IDCollection.length; i++) {
+        document.getElementById(IDCollection[i]).firstChild.nodeValue = val[i];
+      }
+    }
+
+    updateDate();
+
+
+  </script>
+  <br>
+  <br>
+  <br>
+
+  <!-- Hero Section -->
+  <section class="hero" id="about">
+    <img src="assets/images/IMG_20240214_220846_565-01.jpeg" alt="Sanket-Asole" loading="lazy" class="hero-img" />
+    <div class="bio animate__animated animate__shakeX">
+      <h2 class="bio-title">About Me</h2>
+      <p class="bio-text">
+        I am <b>Sanket Sharad Asole</b>, a diligent and passionate Computer Science and Engineering student at
+        Yeshwantrao Chavan College of Engineering (YCCE), Nagpur. With a keen interest in technology and innovation, I
+        constantly strive to broaden my knowledge and skills in various domains of computer science.
+        <br>
+
+        Driven by a passion for innovation and a thirst for knowledge, I'm eager to tackle new challenges and contribute
+        positively to the world of technology. Feel free to explore my portfolio and reach out to me for collaboration
+        or opportunities. Let's build something incredible together!
+      </p>
+    </div>
+  </section>
+  <!-- <br> -->
+
+  <!-- More about -->
+  <section class="more-about">
+    <h2> My academic skills</h2>
+    <p>
+      Driven by a curiosity for cutting-edge technologies, I possess a solid foundation in programming languages such as
+      C, Python, and Java. Additionally, my familiarity with cloud computing concepts and services, particularly within
+      Amazon Web Services (AWS), adds versatility to my skill set.
+    </p>
+    <p>
+      I am adept at web development technologies like HTML, CSS, and JavaScript, having showcased my proficiency through
+      the creation of a personal portfolio website. This project not only demonstrates my technical abilities but also
+      reflects my dedication to presenting my work in a professional manner.
+      <br>
+      Furthermore, my expertise extends to database management systems like MySQL and the fundamentals of Internet of
+      Things (IoT). With a solid grasp of computer science fundamentals including OOPs, data structures and algorithms,
+      computer networks, and software engineering, I am equipped to tackle diverse challenges in the field.
+    </p>
+    <p>
+      Having attained the AWS Certified Cloud Practitioner certification, I am committed to staying updated with
+      industry standards and best practices. My passion for problem-solving, coupled with a collaborative mindset,
+      positions me as a valuable asset in any team or project.
+
+      Overall, I am enthusiastic about leveraging my skills and knowledge to contribute meaningfully to the
+      ever-evolving tech landscape.
+    </p>
+  </section>
+
+
+
+
+
+
+  <!-- Skills section -->
+  <section class="skills" id="skills">
+    <h2 class="skill-header">My Top Skills</h2>
+
+    <div class="skills-wrapper">
+      <div class="first-set animate__animated animate__pulse">
+        <img src="assets/images/c.svg" alt="" loading="lazy" class="icon icon-card" />
+        <img src="assets/images/python.svg" alt="" loading="lazy" class="icon icon-card" />
+        <img src="assets/images/mysql.svg" alt="" loading="lazy" class="icon icon-card" />
+      </div>
+
+      <div class="second-set animate__animated animate__pulse">
+        <img src="assets/images/amazon-aws.svg" alt="" loading="lazy" class="icon icon-card" />
+        <img src="assets/icons/icons8-html-5.svg" alt="" loading="lazy" class="icon icon-card" />
+        <img src="assets/icons/icons8-css3.svg" alt="" loading="lazy" class="icon icon-card" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects section -->
+  <section class="projects" id="projects">
+    <h2 class="projects-title">Some of my Recent Projects</h2>
+    <div class="projects-container">
+      <div class="project-container project-card">
+        <img src="assets/images/Screenshot 2024-04-02 202401.png" alt="aws-project" loading="lazy" class="project-pic" />
+        <h3 class="project-title">aws-project</h3>
+        <p class="project-details">
+          Enterprise Data Warehouse for Olympic Games using Amazon-AWS cloud and its services .
+        </p>
+        <a href="#" target="_blank" class="project-link">Check it Out</a>
+      </div>
+      <div class="project-container project-card">
+        <img src="assets/images/Screenshot 2024-04-02 201129.png" alt="portfolio-website" loading="lazy" class="project-pic" />
+        <h3 class="project-title">portfolio-website</h3>
+        <p class="project-details">
+          Designed a personal portfolio website to show technical skills, projects and 
+          professional experience .
+        </p>
+        <a href="#" target="_blank" class="project-link">Check it Out</a>
+      </div>
+      <div class="project-container project-card">
+        <img src="assets/images/Screenshot 2024-04-02 201528.png" alt="github-profile" loading="lazy" class="project-pic" />
+        <h3 class="project-title">github-profile</h3>
+        <p class="project-details">
+          All Other small projects are uploaded on my personal github profile with their source code . 
+        </p>
+        <a href=" https://github.com/sanketasole" target="_blank" class="project-link">Check it Out</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="education" id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="timeline">
+      <!-- B.Tech -->
+      <div class="education-item">
+        <div class="education-content">
+          <h3 class="education-title">B.Tech - Yeshwantrao Chavan College of Engineering (YCCE), Nagpur</h3>
+          <p class="education-duration">2021-2025</p>
+          <p class="education-cgpa">Computer Science and Engineering - CGPA till 5th Sem (7.94)</p>
+        </div>
+      </div>
+      <!-- HSC -->
+      <div class="education-item">
+        <div class="education-content">
+          <h3 class="education-title">HSC - M.P.Deo Memorial Dharampeth Science College, Nagpur</h3>
+          <p class="education-duration">2020-2021</p>
+          <p class="education-percentage">94.50%</p>
+        </div>
+      </div>
+      <!-- SSC -->
+      <div class="education-item">
+        <div class="education-content">
+          <h3 class="education-title">SSC - School of Scholars, Yavatmal</h3>
+          <p class="education-duration">2018-2019</p>
+          <p class="education-percentage">94.80%</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+
+
+  <!-- Contact section -->
+  <section class="contact" id="contact">
+    <h2>Get In Touch With Me</h2>
+    <div class="contact-form-container">
+      <div class="contact-form">
+        <form action="https://formspree.io/f/xqkrynvy" method="POST">
+          <div class="form-control">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="sender-name" placeholder="Enter Your Name" class="input-field"
+              required />
+          </div>
+          <div class="form-control">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="sender-email" placeholder="Enter Your Email" class="input-field"
+              required />
+          </div>
+          <div class="form-control">
+            <label for="message">Message</label>
+            <textarea id="message" cols="60" rows="10" placeholder="Enter Your Message" name="message"
+              class="input-field" required></textarea>
+          </div>
+          <input type="submit" value="Submit" id="submit-btn" class="submit-btn" />
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Social accounts - Fixed to the right -->
+  <div class="socials">
+    <!-- <a href="#" target="_blank"
+        ><img
+          src="assets/icons/icons8-twitter-circled.gif"
+          alt="Twitter"
+          loading="lazy"
+          class="socicon"
+      /></a> -->
+    <a href="https://www.instagram.com/sanket_asole" target="_blank"><img src="assets/icons/icons8-instagram.gif"
+        alt="Instagram" loading="lazy" class="socicon" /></a>
+    <a href=" https://www.linkedin.com/in/sanket-asole-a21070228" target="_blank"><img
+        src="assets/icons/icons8-linkedin-circled.gif" alt="Linkedin" loading="lazy" class="socicon" /></a>
+    <a href="https://github.com/sanketasole" target="_blank"><img src="assets/icons/icons8-github.gif" alt="Github"
+        class="socicon" /></a>
+  </div>
+
+  <!-- Scroll to top -->
+  <i class="scroll-up" id="scroll-up"><img src="assets/icons/icons8-upward-arrow.gif" class="socicon up-arrow"
+      alt="" /></i>
+
+  <div id="particles-js"></div>
+
+
+  <!-- Footer section -->
+  <footer>
+    <p class="copy">&copy; Copyright 2024</p>
+    <p class="copy">
+      Built with &#x2661; by
+      <a href="" target="_blank">Sanket Asole</a>
+    </p>
+  </footer>
+
+  <!-- Website scripts -->
+  <script src="assets/js/app.js"></script>
+
+  <!-- Ion icons scripts -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+
+</body>
+<script>
+  particlesJS("particles-js", {
+    "particles": {
+      "number": {
+        "value": 80,
+        "density": {
+          "enable": true,
+          "value_area": 800
+        }
+      },
+      "color": {
+        "value": "#000000"
+      },
+      "shape": {
+        "type": "circle",
+        "stroke": {
+          "width": 0,
+          "color": "#000000"
+        },
+        "polygon": {
+          "nb_sides": 5
+        }
+      },
+      "opacity": {
+        "value": 0.5,
+        "random": false,
+        "anim": {
+          "enable": false,
+          "speed": 1,
+          "opacity_min": 0.1,
+          "sync": false
+        }
+      },
+      "size": {
+        "value": 3,
+        "random": true,
+        "anim": {
+          "enable": false,
+          "speed": 40,
+          "size_min": 0.1,
+          "sync": false
+        }
+      },
+      "line_linked": {
+        "enable": true,
+        "distance": 150,
+        "color": "#808080",
+        "opacity": 0.4,
+        "width": 1
+      },
+      "move": {
+        "enable": true,
+        "speed": 6,
+        "direction": "none",
+        "random": false,
+        "straight": false,
+        "out_mode": "out",
+        "bounce": false,
+        "attract": {
+          "enable": false,
+          "rotateX": 600,
+          "rotateY": 1200
+        }
+      }
+    },
+    "interactivity": {
+      "detect_on": "canvas",
+      "events": {
+        "onhover": {
+          "enable": true,
+          "mode": "repulse"
+        },
+        "onclick": {
+          "enable": true,
+          "mode": "push"
+        },
+        "resize": true
+      },
+      "modes": {
+        "grab": {
+          "distance": 400,
+          "line_linked": {
+            "opacity": 1
+          }
+        },
+        "bubble": {
+          "distance": 400,
+          "size": 40,
+          "duration": 2,
+          "opacity": 8,
+          "speed": 3
+        },
+        "repulse": {
+          "distance": 200,
+          "duration": 0.4
+        },
+        "push": {
+          "particles_nb": 4
+        },
+        "remove": {
+          "particles_nb": 2
+        }
+      }
+    },
+    "retina_detect": true
+  }); 
+</script>
+
+
+</html>
